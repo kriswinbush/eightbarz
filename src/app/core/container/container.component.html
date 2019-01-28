@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<pdi-nav>
+  <div class="container">
+    <header class="header">
+      <mat-toolbar color="accent">
+          <a [routerLink]="['bars']" mat-button color="primary">Bars</a>
+          <a [routerLink]="['beats']" mat-button color="primary">Beats</a>
+          <a [routerLink]="['callaboz']" mat-button color="primary">Callaboz</a>
+      </mat-toolbar>
+    </header>
+    <div class="content-container">
+      <div class="main">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <footer class="footer" style="text-align:center">
+        <h1 class="mat-h1">
+          Welcome to {{ title }}!
+        </h1>
+      </footer>
+  </div>    
+</pdi-nav>

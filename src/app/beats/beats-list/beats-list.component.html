@@ -1,0 +1,38 @@
+<mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+
+    <ng-container matColumnDef="track">
+      <div *matHeaderCellDef>My Beats</div>
+      <div class="full-width" *matCellDef="let beat">
+        <button mat-icon-button (click)="playTrack(beat)">
+          <mat-icon>play_circle_filled</mat-icon>
+        </button>
+        <button mat-icon-button (click)="stopTrack(beat)">
+          <mat-icon>stop</mat-icon>
+        </button>
+        {{beat.track}}
+        <button mat-icon-button (click)="addCallabo(beat)">
+            <mat-icon>library_add</mat-icon>
+        </button>
+      </div>
+    </ng-container>
+  
+    <ng-container matColumnDef="path">
+      <div *matHeaderCellDef></div>
+      <div class="full-width" *matCellDef="let beat">
+        {{beat.path}}
+      </div>
+    </ng-container>
+  
+    <ng-container matColumnDef="play">
+        <div *matHeaderCellDef></div>
+        <div *matCellDef="let beat">
+          <button mat-icon-button (click)="removeTrack(beat)">
+            <mat-icon>delete_forever</mat-icon>
+          </button>
+        </div>
+      </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="itemColumns"></mat-header-row>
+    <mat-row class="container" *matRowDef="let row; columns: itemColumns"></mat-row>
+    
+  </mat-table>

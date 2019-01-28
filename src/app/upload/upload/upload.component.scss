@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    border: 2px dashed darkblue;
+    .flex-spacer {
+        flex: 1 1 auto;
+    }
+
+    .upload-file {
+        display: flex;
+        align-items: center;
+        span {
+            margin-left: 10px;
+        }
+    }
+
+    .file-name {
+        margin-right: 10px;
+    }
+}

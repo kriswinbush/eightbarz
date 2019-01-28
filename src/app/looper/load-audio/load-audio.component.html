@@ -1,0 +1,31 @@
+<mat-card>
+<div class="container">
+  <!-- <h1>Digital Audio Workstation</h1> -->
+  <div>
+    <canvas #cvs></canvas>
+  </div>
+  <div class="play-controls-container">
+    <div>
+      <button mat-icon-button color="warn" (click)="rec(beat)">
+        <mat-icon>fiber_manual_record</mat-icon>
+      </button>
+    </div>
+    <div>
+      <button mat-icon-button color="primary" (click)="playback(beat)">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+    </div>
+    <div>
+      <button mat-icon-button (click)="stopPlayback()">
+        <mat-icon>stop</mat-icon>
+      </button>
+    </div>
+    <div class="flex-spacer"></div>
+    <div>
+      <button mat-raised-button (click)="saveVocals(beat)">
+        <mat-icon>save bars</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+</mat-card>

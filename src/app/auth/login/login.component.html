@@ -1,0 +1,33 @@
+<div class="container">
+  <form [formGroup]="loginForm" novalidate (ngSubmit)="loginFormSubmit()">
+      <mat-card class="login-card">
+        <mat-card-header>
+          <mat-card-title>Authentication Information</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                  <mat-form-field class="full-width">
+                    <input matInput placeholder="Username" formControlName="username">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                    <mat-form-field class="full-width">
+                      <input matInput placeholder="Password" formControlName="password">
+                    </mat-form-field>
+                  </div>
+                </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Login</button>
+          <button mat-raised-button color="warn" (click)="auth.googleLogin()">login with google</button>
+          <button mat-raised-button color="secondary" (click)="auth.logout()">sign out</button>
+        </mat-card-actions>
+      </mat-card>
+  </form>
+  <div>
+    <pdi-user-profile></pdi-user-profile>
+  </div>
+</div>

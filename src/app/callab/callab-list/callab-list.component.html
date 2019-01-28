@@ -1,0 +1,19 @@
+<mat-table class="mat-elevation-z8" [dataSource]="dataSource">
+
+  <ng-container matColumnDef="beatId">
+      <div *matHeaderCellDef>My Callaboz</div>
+      <div class="full-width" *matCellDef="let callab">
+        <button mat-icon-button>
+          <mat-icon>play_circle_filled</mat-icon>
+        </button>
+        {{callab.beatId}}
+        <button mat-icon-button (click)="openDAW(callab)">
+            <mat-icon>record_voice_over</mat-icon>
+          </button>
+      </div>
+  </ng-container>
+
+
+  <mat-header-row *matHeaderRowDef="callabColumns"></mat-header-row>
+  <mat-row class="container" *matRowDef="let row; columns: callabColumns"></mat-row>
+</mat-table>

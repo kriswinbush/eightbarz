@@ -1,0 +1,41 @@
+<div class="container"
+  pdiDropZone
+  (hovered)="toggleHover($event)"
+  (dropped)="upload.uploadBeatData($event)"
+  [class.hovering]="isHovering">
+  <mat-toolbar>
+        <!-- <div>
+        <mat-form-field>
+            <mat-select placeholder="Music Type">
+              <mat-option *ngFor="let musicType of uploadMusicType" [value]="musicType.value">
+                {{musicType.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div> -->
+    <div>&nbsp;</div>
+    <div> 
+      <label for="uploadPicture" class="upload-file">
+          <mat-icon>cloud_upload</mat-icon>
+          <span>Or choose a file...</span>
+      </label>
+      <input #beatInput
+        type="file"
+        id="uploadPicture"
+        class="hidden-input"
+        [hidden]="true"
+        accept="audio/ogg, audio/mp3, audio/wav"
+        (change)="selectedFile($event.target.files)"> <!-- upload.uploadData($event.target.files)-->
+    </div>
+    <div class="flex-spacer"></div>
+    <!-- {{downloadURL | async}} -->
+    <div class="flex-spacer"></div>
+    <div class="file-name">{{uploadedFileName}}</div>
+    <button mat-mini-fab color="accent">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div *ngIf="upload.percentage | async as pct">
+    <mat-progress-bar mode="determinate" value="pct"></mat-progress-bar>
+  </div>
+</div>
