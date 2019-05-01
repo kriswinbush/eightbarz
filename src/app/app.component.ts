@@ -6,7 +6,7 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Callaboz';
+  title = 'EightBarz';
   uploadedFileName = "Upload Bars or beats";
   uploadMusicType: any[] = [
     {value: 'bars-0', viewValue: 'Bars'},
